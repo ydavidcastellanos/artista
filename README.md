@@ -1,2 +1,4 @@
-# artista
-Artista usando HTML y CSS
+#  Musical artist WebSite
+
+## Musical artist WebSite Project in HTML, CSS & Vanilla JS
+
