@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Staatliches&display=swap');
+@import "./variables";
+@import "./responsive";
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Staatliches', cursive;
+}
+
+body {
+    background-image: linear-gradient(rgba(45, 45, 45, 0.8), rgba(45, 45, 45, 0.6), rgba(45, 45, 45, 0.8)),
+        url(../img/contact-bg.jpg);
+    background-position: center;
+    color: $blanco;
+    text-rendering: optimizeLegibility;
+    font-size: 16px;
+    @include laptop-l {
+        font-size: 14px;
+    }
+
+    @include laptop {
+        font-size: 12px;
+    }
+
+    @include tablet {
+        font-size: 10px;
+        p,
+        label {
+            font-size: 14px;
+        }
+    }
+}
+
+h1 {
+    display: none;
+}
+
+h2 {
+    font-size: 350%;
+    color: $blanco;
+}
+
+p {
+    font-family: 'Roboto', sans-serif;
+    color: $blanco-texto;
+}
+
+ul {
+    margin: 0;
+    padding: 0;
+    font-weight: 400;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+    color: $blanco;
+}
+
+// Buttons
+
+.btn {
+    font-size: 150%;
+    padding: 0.625rem 1.875rem;
+    margin: 0rem 0rem;
+    border-radius: $borde-redondeado;
+    letter-spacing: 1px;
+    animation: bounceIn;
+    animation-duration: 2s;
+    animation-delay: 1s;
+}
+
+.btn-noticia {
+    font-size: 120%;
+    width: 100%;
+    text-align: center;
+    padding: 0.625rem 3.75rem;
+    margin: 1.25rem 1.875rem;
+    letter-spacing: 1px;
+}
+
+.btn-full {
+    border: 2px solid $blanco;
+    color: $blanco;
+    transition: ease all .3s;
+    &:hover,
+    &:active {
+        background-color: $blanco;
+        color: $negro;
+    }
+}

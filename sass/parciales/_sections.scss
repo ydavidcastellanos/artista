@@ -1,0 +1,604 @@
+@import "./variables";
+@import "./mixins";
+
+// Noticias
+.noticias {
+    @include container-section;
+    &__box {
+        @include box-sections;
+        @include laptop-l {
+            @include box-sections(95vw);
+        }
+        &--span {
+            @include borde-h2;
+        }
+
+        &--titulo-noticia {
+            padding-top: 3.75rem;
+            margin-bottom: 1.25rem;
+            font-size: 250%;
+            text-align: center;
+        }
+
+        &--fecha {
+            margin: 1.25rem auto;
+            font-size: 110%;
+            color: #afa8a8;
+            @include laptop-l {
+                padding: 0 6rem;
+            }
+            @include tablet {
+                padding: 0;
+            }
+        }
+
+        &--imagen {
+            display: block;
+            margin: 1.25rem auto;
+            height: 45vh;
+            object-fit: cover;
+            @include laptop-l {
+                height: 45vh;
+            }
+            @include laptop {
+                height: 40vh;
+            }
+            @include mobile-l {
+                height: 22.5vh;
+            }
+            @include mobile {
+                height: 19vh;
+            }
+        }
+
+        &--parrafo {
+            margin: 1.25rem auto;
+            font-size: 120%;
+            color: #afa8a8;
+            @include laptop-l {
+                padding: 0 6rem;
+            }
+            @include tablet {
+                padding: 0;
+            }
+
+            @include mobile-l {
+                font-size: 150%;
+            }
+        }
+
+        &--video {
+            display: block;
+            margin: auto;
+            width: 45vw;
+            height: 50vh;
+
+            @include laptop-l {
+                width: 45vw;
+                height: 45vh;
+            }
+
+            @include laptop {
+                width: 55vw;
+                height: 38vh;
+            }
+
+            @include tablet {
+                width: 70vw;
+                height: 40vh;
+            }
+
+            @include mobile-l {
+                width: 85vw;
+                height: 24vh;
+            }
+        }
+
+    }
+}
+
+// Tour
+.tour {
+    @include container-section;
+    &__box {
+        @include box-sections;
+        @include laptop-l {
+            @include box-sections(95vw);
+        }
+        &--heading {
+            margin-bottom: 2.5rem;
+        }
+
+        &--span {
+            @include borde-h2;
+        }
+    }
+    
+}
+
+// Discografia
+.discografia {
+    @include container-section;
+    &__box {
+        @include box-sections;
+
+        @include laptop-l {
+            @include box-sections(95vw);
+        }
+        &--heading {
+            margin-bottom: 2.5rem;
+        }
+
+        &--span {
+            @include borde-h2;
+        }
+
+        &--categoria {
+            font-size: 130%;
+            margin-top: 2.5rem;
+            text-align: center;
+        }
+
+        &--input {
+            user-select: none;
+            cursor: pointer;
+            font-size: 125%;
+            margin: 0 1rem;
+
+            @include tablet {
+                font-size: 160%;
+            }
+            @include mobile {
+                margin: 0 0.8rem;
+            }
+        }
+
+        #todo:checked~.todo,
+        #megadeth:checked~.megadeth,
+        #solista:checked~.solista,
+        #cacophony:checked~.cacophony,
+        #hawaii:checked~.hawaii,
+        &--input:hover {
+            color: $amarillo;
+            transition: ease all .3s;
+        }
+
+
+        #todo,
+        #solista,
+        #megadeth,
+        #cacophony,
+        #hawaii {
+            display: none;
+        }
+
+        #megadeth:checked~&--albumes .mf,
+        #megadeth:checked~&--albumes .hawaii,
+        #megadeth:checked~&--albumes .cacophony {
+            @include filtro-elementos;
+        }
+
+        #solista:checked~&--albumes .megadeth,
+        #solista:checked~&--albumes .hawaii,
+        #solista:checked~&--albumes .cacophony {
+            @include filtro-elementos;
+        }
+
+        #cacophony:checked~&--albumes .megadeth,
+        #cacophony:checked~&--albumes .hawaii,
+        #cacophony:checked~&--albumes .mf {
+            @include filtro-elementos;
+        }
+
+        #hawaii:checked~&--albumes .megadeth,
+        #hawaii:checked~&--albumes .cacophony,
+        #hawaii:checked~&--albumes .mf {
+            @include filtro-elementos;
+        }
+
+        &--albumes {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        &--figure {
+            margin: 1.875rem 1.875rem 0rem 0rem,;
+            position: relative;
+            display: flex;
+            animation: fadeInUp;
+            animation-duration: .8s;
+            animation-delay: .5s;
+            transition: all ease .3s;
+            &:hover {
+                transform: scale(1.1);
+            }
+
+            @include mobile-l {
+                margin: 0.625rem 0;
+            }
+        }
+
+        &--imagen {
+            width: 22rem;
+            height: 22rem;
+
+            @include mobile-l {
+                width: 17rem;
+                height: 17rem;
+            }
+        }
+
+        &--efecto-hover {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(20, 20, 20, .6);
+            opacity: 0;
+            visibility: hidden;
+            outline: .5px solid $negro;
+            transition: all ease .3s;
+        }
+
+        &--titulo-album {
+            color: $blanco;
+            height: 0;
+            margin-top: 10rem;
+        }
+
+        &--figure:hover > &--efecto-hover {
+            opacity: 1;
+            visibility: visible;
+        }
+
+    }
+}
+
+// Galeria
+.galeria {
+    @include container-section;
+    &__box {
+        @include box-sections;
+        @include laptop-l {
+            @include box-sections(90vw);
+        }
+
+        &--heading {
+            margin-bottom: 2.5rem;
+        }
+
+        &--span {
+            @include borde-h2;
+        }
+
+        &--container {
+            width: 100%;
+            margin: 3.125rem auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            grid-auto-rows: 1fr;
+            grid-gap: 0.625rem;
+
+            @include laptop {
+                grid-template-columns: repeat(2, 1fr);
+            }       
+
+            @include tablet {
+                grid-template-columns: repeat(1, 1fr);
+            }            
+        }
+
+        &--imagen-container {
+            height: 18.75rem;
+            overflow: hidden;
+            animation: fadeInUp;
+            animation-duration: .8s;
+            animation-delay: .5s;
+        }
+
+        &--img {
+            width: 100%;
+            height: 100%;
+            filter: grayscale(100%);
+            transform: scale(1);
+            transition: ease all .3s;
+
+            &:hover {
+                filter: grayscale(0%);
+                transform: scale(1.09);
+            }
+        }
+    }
+
+}
+
+// Videos
+.videos {
+    @include container-section;
+    &__box {
+        @include box-sections;
+        @include laptop-l {
+            @include box-sections(95vw);
+        }
+
+        &--heading {
+            margin-bottom: 2.5rem;
+        }
+
+        &--span {
+            @include borde-h2;
+        }
+
+        &--parrafo {
+            margin-top: 2.5rem;
+        }
+
+        &--container {
+            width: 100%;
+            height: 100%;
+            margin: 3.125rem auto;
+            display: grid;
+            grid-template-columns: repeat(1, 1fr);
+            grid-auto-rows: 1fr;
+            grid-gap: 0.625rem;
+        }
+
+        &--text {
+            text-align: left;
+            font-weight: 400;
+            font-family: 'Roboto',
+            sans-serif;
+            color: $blanco-texto;
+            @include tablet {
+                font-size: 160%;
+            }
+        }
+
+        &--text-link {
+            color: $blanco-texto;
+            strong {
+                font-family: 'Roboto',
+                sans-serif;
+            }
+            text-decoration: none;
+            transition: all ease .3s;
+            &:hover {
+                color: $amarillo;
+            }
+        }
+
+
+    }
+}
+
+// Gear
+.gear {
+    @include container-section;
+    &__box {
+        @include box-sections;
+        @include laptop-l {
+            @include box-sections(95vw);
+        }
+        &--heading {
+            margin-bottom: 2.5rem;
+        }
+
+        &--span {
+            @include borde-h2;
+            margin-bottom: 0.625rem;
+        }
+
+        &--marcas {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
+        }
+
+        &--marcas-logo {
+            filter: invert(100%);
+            height: 10vh;
+            width: 12vw;
+            object-fit: contain;
+
+            @include tablet {
+                height: 12vh;
+                width: 14vw;
+            }
+
+            @include mobile-l {
+                height: 10vh;
+                width: 26vw;
+            }
+        }
+
+        &--sub-titulo {
+            color: $blanco-texto;
+            font-size: 130%;
+            margin: 2.5rem 1.25rem;
+            font-family: 'Roboto', sans-serif;
+        }
+
+        &--categoria {
+            margin-top: 2.5rem;
+            text-align: left;
+        }
+
+        &--input {
+            font-size: 180%;
+            margin: 0 1rem;
+            user-select: none;
+            cursor: pointer;
+            color: $blanco;
+            transition: ease all .3s;
+            &:hover {
+                color: $amarillo;
+            }
+
+            @include mobile {
+                margin: 0 2.3rem;
+            }
+
+        }
+
+        #guitarras,
+        #amps,
+        #pedales,
+        #pickups {
+            display: none;
+        }
+
+        #guitarras:checked~.guitarras,
+        #amps:checked~.amps,
+        #pedales:checked~.pedales,
+        #pickups:checked~.pickups {
+            color: $amarillo;
+        }
+
+        #guitarras:checked~&--img-container .amps,
+        #guitarras:checked~&--img-container .pickups,
+        #guitarras:checked~&--img-container .pedales {
+            @include filtro-elementos;
+        }
+
+        #amps:checked~&--img-container .gt,
+        #amps:checked~&--img-container .pickups,
+        #amps:checked~&--img-container .pedales {
+            @include filtro-elementos;
+        }
+
+        #pickups:checked~&--img-container .gt,
+        #pickups:checked~&--img-container .amps,
+        #pickups:checked~&--img-container .pedales {
+            @include filtro-elementos;
+        }
+
+        #pedales:checked~&--img-container .gt,
+        #pedales:checked~&--img-container .amps,
+        #pedales:checked~&--img-container .pickups {
+            @include filtro-elementos;
+        }
+        
+        &--img-container {
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            animation: fadeInUp;
+            animation-duration: .8s;
+            animation-delay: .3s;
+        }
+        
+        &--figure {
+            position: relative;
+            display: flex;
+            transition: all ease .3s;
+            &:hover {
+                transform: scale(1.05);
+            }
+        }
+
+        &--guitarras {
+            @include gear-items(40rem, 12rem);
+            @include tablet {
+                @include gear-items(27rem, 9rem);
+                margin: 30px 0px 0px 0px;
+            }
+            @include mobile-l {
+                @include gear-items(20rem, 7rem);
+            }
+
+            @include mobile {
+                @include gear-items(17rem, 6rem);
+            }
+        }
+
+        &--amps {
+            @include gear-items(35rem, 12rem);
+            @include tablet {
+                @include gear-items(27rem, 12rem);
+            }
+            @include mobile-l {
+                @include gear-items(20rem, 10rem);
+            }
+            @include mobile {
+                @include gear-items(17rem, 7rem);
+            }
+        }
+        
+        &--pickups {
+            @include gear-items(30rem, 20rem);
+            @include tablet {
+                @include gear-items(25rem, 16rem);
+            }
+            @include mobile-l {
+                @include gear-items(20rem, 11rem);
+            }
+            @include mobile {
+                @include gear-items(19rem, 10rem);
+            }
+        }
+        
+        &--pedals {
+            @include gear-items(13rem, 20rem);
+            @include tablet {
+                @include gear-items(11rem, 17rem);
+            }
+            @include mobile-l {
+                @include gear-items(9rem, 13rem);
+            }
+        }
+        
+        &--pedals-xl {
+            @include gear-items(30rem, 19.5rem);
+            @include tablet {
+                @include gear-items(27rem, 18rem);
+            }
+            @include mobile-l {
+                @include gear-items(18rem, 13rem);
+            }
+            @include mobile {
+                @include gear-items(17rem, 12rem);
+            }
+        }
+
+        &--text-box {
+            margin-top: 20px;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        &--text {
+            position: relative;
+            font-size: 135%;
+            text-align: center;
+            color: $blanco-texto;
+            transition: all ease .3s;
+        }
+
+        &--text-link {
+            @include text-link(85%, 40%);
+        }
+
+        &--text-link-pickups {
+            @include text-link(90%, 42%);
+        }
+
+        &--text-link-pedals {
+            @include text-link(91%, 35%);
+        }
+
+        &--text-link-pedals-xl {
+            @include text-link(91%, 40%);
+        }
+
+        @include efecto-text-link;
+
+    }
+}
