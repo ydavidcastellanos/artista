@@ -6,6 +6,3 @@
 ### Home Section
 [![index.png](https://i.postimg.cc/hjTktQNH/index.png)](https://postimg.cc/ZBY7fnbc)
 [![index-2.png](https://i.postimg.cc/PJ8Pxydd/index-2.png)](https://postimg.cc/2Lrz94qt)
-
-### Tour Section
-[![Tour.png](https://i.postimg.cc/G227T8BM/Tour.png)](https://postimg.cc/3ysCPwFp)
